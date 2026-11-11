@@ -22,13 +22,7 @@ uint16_t get_speed()
     init_can();
     can_transmit(SPEED_MSG_ID, speed, 2);
     __delay_ms(80);
-   // can_receive(&msg_id, data, &len);
-            
-    //data[2] = '\0';
-    // clcd_print("SPEED", LINE1(0));
-    // clcd_print(data, LINE2(0));
-    
-    
+      
 }
 
 unsigned char get_gear_pos()
@@ -42,11 +36,7 @@ unsigned char get_gear_pos()
          ind++;
 
          }
-         
-      //   clcd_print("GEAR",LINE1(6));
-        
-      //   clcd_print(ev[ind],LINE2(6));
-         
+                 
      }else if(val==MK_SW2){
          
          if(ind==8){
@@ -57,19 +47,9 @@ unsigned char get_gear_pos()
          if(ind>0){
          ind--;
          }
-         
-         
-      //   clcd_print("GEAR",LINE1(6));
-         
-      //   clcd_print(ev[ind],LINE2(6));
-         
-         
-     }else if(val==MK_SW3){
-          
+  
+     }else if(val==MK_SW3){          
          ind = 8;
-     //    clcd_print("GEAR",LINE1(6));
-        
-     //    clcd_print(ev[ind],LINE2(6));
      }
     
      int len;
@@ -83,7 +63,7 @@ unsigned char get_gear_pos()
     G[4] = '\0';
     can_transmit(GEAR_MSG_ID,G,4);
     __delay_ms(80);
-   // can_receive(&msg_id, GEAR, &len);
+   
    // clcd_print("GEAR",LINE1(6));    
    // clcd_print(GEAR,LINE2(6));
     
