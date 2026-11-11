@@ -8,15 +8,7 @@ uint16_t get_rpm()
 {
     //Implement the rpm function
        uint16_t ADC_Val = read_adc(0x04);
-       uint16_t RPM = (ADC_Val/10.23)*60;
-       
-     
-       
-    /*   ssd[3] = digit[RPM%10];
-		ssd[2] = digit[(RPM/10)%10];
-		ssd[1] = digit[(RPM/100)%10];
-		ssd[0] = digit[(RPM/1000)];*/
- 
+       uint16_t RPM = (ADC_Val/10.23)*60; 
     return RPM;
 }
 
