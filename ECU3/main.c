@@ -29,9 +29,6 @@ void main(void) {
     init_config();
     uint16_t msg_id;
     uint8_t len=0;
-   // char speed[3];
-   // char GEAR[5];
-   // char RPM[5];
     uint8_t data[8];
     
     /* ECU1 main loop */
